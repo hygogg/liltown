@@ -1,0 +1,21 @@
+.searchPlace {
+	position: relative;
+	background-color: #E4EAFA;
+	padding: 30px;
+	display: inline;
+	margin: 30px;
+	-moz-box-shadow: 1px 1px 3px #CDD8F5;
+	-webkit-box-shadow: 1px 1px 3px #CDD8F5;
+	border: 1px solid #999794;
+	border-radius: 15px;	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+.searchPlace input#q {
+	width: 100px;
+	height: 1.6em;
+}
+.searchPlace button {
+	margin-top: 1px;
+	margin-left: 5px;
+}

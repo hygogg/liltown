@@ -1,0 +1,72 @@
+.addplacewindow {
+	position: relative;
+	border: solid #848484 1px;
+	background-color: #ecffed;
+	top: 30px;
+    width:320px;
+    height:320px;
+    padding: 10px
+}
+.addplacewindow input#q {
+	width: 100px;
+	float: left;
+	height: 1.6em;
+}
+.addplacewindow button {
+	float: left;
+	margin-top: 1px;
+	margin-left: 5px;
+}
+.label{
+	text-align: right
+}
+.addplacewindow input {
+	width: 200px;
+	float: left;
+	height: 1.6em;
+	margin-left: 3px;
+}
+
+#button {
+  width:50px;
+  color:#ffffff;
+  background:#337fcc;
+  font-size:14px;
+  font-weight:bold;
+  text-shadow:0 -1px 0px #225588,0 -1px 0px #225588;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+  border:1px solid #225588;
+  padding:2px 0 2px 0;
+  border-radius:5px;
+  background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
+  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
+  box-shadow:1px 2px 2px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.5) inset, 0px -1px 0px rgba(255,255,255,0.2) inset;
+}
+a#button:hover {
+  background:-moz-linear-gradient(rgba(34,85,136,0.4), rgba(34,85,136,0.9));
+  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.4)), to(rgba(119,170,221,0.9)));
+}
+
+#cancel {
+  width:50px;
+  color:#ffffff;
+  background:#cccccc;
+  font-size:14px;
+  font-weight:bold;
+  text-shadow:0 -1px 0px #888888,0 -1px 0px #888888;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+  border:1px solid #888888;
+  padding:2px 0 2px 0;
+  border-radius:5px;
+  background:-moz-linear-gradient(rgba(88,88,88,0.5), rgba(88,88,88,1));
+  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(88,88,88,0.5)), to(rgba(88,88,88,1)));
+  box-shadow:1px 2px 2px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.5) inset, 0px -1px 0px rgba(255,255,255,0.2) inset;
+}
+a#cancel:hover {
+  background:-moz-linear-gradient(rgba(88,88,88,0.4), rgba(88,88,88,0.9));
+  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(88,88,88,0.4)), to(rgba(88,88,88,0.9)));
+}

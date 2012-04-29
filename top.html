@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liltown - 街を楽しもう!</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/liltown_common.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&v=3"></script>
+    <script type="text/javascript" src="js/liltown_top.js"></script>
+    <script type="text/javascript" src="js/searchPlace.js"></script>
+    <script type="text/javascript" src="js/lilinfowindow.js"></script>
+    <script type="text/javascript" src="js/genreSelect.js"></script>
+    <script type="text/javascript" src="js/placequery.js"></script>
+  
+</head>
+<body onload="initialize()">
+    <div id="header">
+        <label id="title"><img src="img/liltown_title.png" alt="Liltown-街を楽しもう!"></label>
+        <div id="searchP">
+            <table>
+            <tr>
+            <td><input id="placeQuery" class="rounded" name="placeQuery" type="text"  value="住所・地名を入力"/></td>
+            <td><button id="searchPlace" onclick="searchPlaceFromQuery()">検索</button></td>
+            </tr>
+            </table>
+        </div>
+			<div id="name">ようこそゲストさん</div>
+			<div id="login"><a href="./login.html" id="login">ログイン</a></div>
+			<div class="separator">｜</div>
+			<div id="help"><a href="./help.html" id="help">ヘルプ</a></div>
+			<div class="separator">｜</div>
+			<div id="about"><a href="./about.html" id="about">このサイトについて</a></div>
+	</div>
+  <div id="map_canvas"></div>
+	<div class="showhidebtn" onclick="openGenreWindow()">ジャンル絞り込み</div>
+  <div id="side_bar">
+  	<div id="spot_info">
+  		<div id="spot_name">地点名称</div>
+  		<div id="tw_photo">写真</div>
+  		<div id="tw_id"><a href="https://twitter.com/#!/masason" target="_blank">@masason</a></div>
+  		<div id="spot_addr">埼玉県和光市本町8-1 本田技研工業株式会社</div>
+  		<div id="spot_phone">048-452-0292</div>
+    	<div id="placeTweet"><label>Twitter情報</label></div>
+    </div>
+    <div id="comment"><label>コメント</label>
+    <iframe src="./comment.html" width="230" frameborder="0" seamless></iframe>
+    <div id="com_caution"><a href="./login.html">ログイン</a>するとコメントできます</div>
+    </div>
+    <div id="fun">
+    	<label>この場所のFun</label>
+		<div id="fun_count">現在120Fun</div>
+		<div id="fun_caution"><a href="./login.html">ログイン</a>するとFunになれます</div>
+		<div id="fun_icons">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+		</div>
+		</div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,23 @@
+.addplace {
+	position: relative;
+	background-color: #E4EAFA;
+	padding: 5px;
+	display: inline;
+	margin: 5px;
+	-moz-box-shadow: 1px 1px 3px #CDD8F5;
+	-webkit-box-shadow: 1px 1px 3px #CDD8F5;
+	border: 1px solid #999794;
+	border-radius: 3px;	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.addplace input#q {
+	width: 100px;
+	float: left;
+	height: 1.6em;
+}
+.addplace button {
+	float: left;
+	margin-top: 1px;
+	margin-left: 5px;
+}

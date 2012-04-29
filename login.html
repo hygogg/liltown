@@ -1,0 +1,68 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+ <link rel="stylesheet" type="text/css" href="css/login.css" />
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="js/cookie.js"></script>
+ <title>ログイン</title>
+</head>
+<body>
+　<div id="header">
+    <label id="title"><img src="img/liltown_title.png" alt="Liltown-街を楽しもう!"></label>
+  </div>
+<div id="fb-root"></div>
+<script language="JavaScript">
+uid = '';
+function checkLoginResult(response){
+    uid = response.authResponse.userID;
+    var phpUrl="http://kajishima.boo.jp/LILTOWN/dbOperation.php";
+    //facebookIDをキーにログインIDを取得する。
+    $.post(phpUrl,
+      {
+        'function':'select',
+        'selectData':'user_id',
+        'specifyDataName':'facebook_id',
+        'table':'USER',
+        'specifyData':uid
+        },function(data){
+            checkFacebookId(data);
+        },
+        "text");
+}
+function checkFacebookId(userId){
+    if(userId != ''){
+        <!--地図画面を出す-->
+        clearCookie("LiltownUserId");
+        setCookie("LiltownUserId", userId);
+         window.open("liltown_main_member.html","_self");
+    }
+    else{
+        <!--ユーザ名登録画面を出す-->
+        setCookie("LiltownFaceBookId",uid);
+        window.open("liltown_register.html","_self");
+    }
+}
+
+ window.fbAsyncInit = function() {
+ <!-- FB初期設定-->
+  FB.init({
+    appId: '176404182459965',
+    status: true,
+    cookie: true,
+    xfbml: true,
+    oauth: true,
+    });
+  FB.login(function(response){
+    checkLoginResult(response);
+  },{scope:'user_photos,user_about_me'});
+ };
+
+(function(d){
+    var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/ja_JP/all.js";
+    d.getElementsByTagName('head')[0].appendChild(js);
+ }(document));
+</script>
+</body>
+</html>

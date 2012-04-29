@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liltown - 街を楽しもう!</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/liltown_common.css" />
+    <link rel="stylesheet" type="text/css" href="css/addplacewindow.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&v=3"></script>
+    <script type="text/javascript" src="js/liltown_main_member.js"></script>
+    <script type="text/javascript" src="js/addplaceInfo.js"></script>
+    <script type="text/javascript" src="js/searchPlace.js"></script>
+    <script type="text/javascript" src="js/lilinfowindow.js"></script>
+    <script type="text/javascript" src="js/genreSelect.js"></script>
+    <script type="text/javascript" src="js/addplacewindow.js"></script>
+    <script type="text/javascript" src="js/placequery.js"></script>
+    <script type="text/javascript" src="js/commentquery.js"></script>
+</head>
+<body onload="initialize()">
+    <div id="header">
+        <label id="title"><img src="img/liltown_title.png" alt="Liltown-街を楽しもう!"></label>
+        <!--<div id="selectG">
+            <button id="genreSelect" onclick="openGenreWindow()">ジャンル</button>
+        </div>
+        <div id="addP">
+            <button id="addPlace" onclick="openAddPlaceInfo()">場所の追加方法</button>
+        </div>-->
+        <div id="searchP">
+            <table>
+            <tr>
+            <td><input id="placeQuery" class="rounded" name="placeQuery" type="text"  value="住所・地名を入力"/></td>
+            <td><button id="searchPlace" onclick="searchPlaceFromQuery()">検索</button></td>
+            </tr>
+            </table>
+        </div>
+			<div id="name">ようこそゲストさん</div>
+			<div id="login"><a href="./logout.html" id="logout">ログアウト</a></div>
+			<div class="separator">｜</div>
+			<div id="help"><a href="./help.html" id="help">ヘルプ</a></div>
+			<div class="separator">｜</div>
+			<div id="about"><a href="./about.html" id="about">このサイトについて</a></div>
+	</div>
+    <div id="map_canvas"></div>
+    	<div class="showhidebtn" onclick="openGenreWindow()">ジャンル絞り込み</div>
+    	<div class="showhidebtn2" onclick="openAddPlaceInfo()">場所の追加方法</div>
+    <div id="side_bar">
+        <div id="spot_info">
+  		<div id="spot_name">地点名称</div>
+  		<div id="photo"><img src="" id="tw_photo"></img></div>
+  		<div id="tw_id">TwitterId</div>
+  		<div id="spot_addr">住所</div>
+  		<div id="spot_phone">電話</div>
+    	<div id="placeTweet"><label>Twitter情報</label></div>
+    </div>
+    <div id="comment"><label>コメント</label>
+    <iframe src="./comment.html" width="230" frameborder="0" seamless></iframe>
+    <div id="com_caution">
+	    <div class="me_photo" ><img src="" id="me_photo"></img></div>
+	    <div id="input_comment"><input id="commentQuery" name="commentQuery" type="text" value="コメントを入力" onchange="addComment()"></div>
+    </div>
+    </div>
+    <div id="fun">
+    	<label>この場所のFun</label>
+		<div id="fun_count">現在120Fun</div>
+		<div id="fun_caution"><a href="#" onclick="addFun()">Funになる</a></div>
+		<div id="fun_icons">
+			<img src="" class"fun_icon" height="30" width="30" alt="名前">
+		</div>
+		</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>会員登録画面</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+var user_name;
+function confirmName(){
+    user_name = document.getElementById("userName").value;
+    if(confirm(user_name + 'さんで登録します。よろしいですか？')){
+        var phpUrl="http://kajishima.boo.jp/LILTOWN/dbOperation.php";
+        facebook_id = getCookie("LiltownFaceBookId");
+        clearCookie("LiltownFaceBookId");
+        $.post(phpUrl,
+        {
+        'function':'insert',
+         'insertDataName':'facebook_id|screen_name|home_adress|create_time|update_time',
+          'insertData':facebook_id+'|'+user_name+'||2012-03-09 00:00:00|2012-03-09 00:00:00',
+          'primaryKeyName':'user_id',
+          'table':'USER'
+        },function(data){
+            checkResult(data);
+        },
+        "text");
+    }
+    
+}
+
+function checkResult(userId){
+    setCookie("LiltownUserId", userId);
+    window.open("liltown_main_member.html","_self");
+}
+</script>
+　<div id="head">
+    <label id="title"><img src="img/liltown_title.png" alt="Liltown-街を楽しもう!"></label>
+  </div>
+ <div id="register">
+ 	<div class="welcome">Liltownへようこそ！</div>
+ 	<div class="text">このサイトでコミュニケーションするときに表示する名前を登録してください。</div>
+ 	<div id="name_input">名前:<input type="text" name="userName" id="userName"/></div>
+ 	<div id="button"><a href="#" onclick="confirmName()">確認</a></div>
+ </div>
+</body>
+</html>
