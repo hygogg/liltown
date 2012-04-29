@@ -23,6 +23,7 @@ html, body {
 	width:100%;
     height:100%;
 	float:left;
+	z-index: 100;
 }
 #side_bar {
 	position:absolute;
@@ -86,7 +87,9 @@ html, body {
 	float:top;
     background-color: #F5F5F5;
     background: -moz-linear-gradient(top, #00BB5D, #00954B);
-    background: -webkit-gradient(linear, left top, left bottom, from(#00BB5D), to(#00954B));     
+    background: -webkit-gradient(linear, left top, left bottom, from(#00BB5D), to(#00954B));
+    box-shadow: 2px 0px 3px #555599;
+    z-index: 200;
 }
 #title{
     float: left;
@@ -186,11 +189,12 @@ html, body {
 	padding-top:1px;
 	margin:0 0 0 0;
 	font-size:13px;
+	text-shadow: 1px 1px 3px gray;
 	color:green;
 	padding:1px auto;
 	cursor:pointer;
 	text-align:center;
-	z-index:150;
+	z-index:250;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;
@@ -209,11 +213,12 @@ html, body {
 	padding-top:1px;
 	margin:0 0 0 0;
 	font-size:13px;
+	text-shadow: 1px 1px 3px gray;
 	color:green;
 	padding:1px auto;
 	cursor:pointer;
 	text-align:center;
-	z-index:150;
+	z-index:250;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;
